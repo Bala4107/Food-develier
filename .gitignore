@@ -1,0 +1,29 @@
+# Target directories (compiled Java classes)
+**/target/
+**/*.class
+
+# Log files
+/logs/
+*.log
+**/*.log
+
+# Local Maven binaries
+.maven/
+
+# Dependency directories
+node_modules/
+react-frontend/node_modules/
+
+# Production builds (we will build this for GitHub Pages)
+react-frontend/dist/
+
+# IDE and OS metadata
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db

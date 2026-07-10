@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: food_order_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: food_order_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  activemq:
+    image: apache/activemq-classic:6.1.2
+    container_name: food_order_activemq
+    ports:
+      - "61616:61616"
+      - "8161:8161"
+    environment:
+      - ACTIVEMQ_ADMIN_USER=admin
+      - ACTIVEMQ_ADMIN_PASSWORD=admin
+
+volumes:
+  mysql_data:
