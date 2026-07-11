@@ -11,8 +11,26 @@ public class OrderResponse {
     private String status;
     private String deliveryAddress;
     private LocalDateTime createdAt;
+    private String driverName;
+    private String driverPhone;
+    private String driverVehicle;
+    private String estimatedDeliveryTime;
 
     public OrderResponse() {
+    }
+
+    public OrderResponse(Long id, String customerName, String items, BigDecimal totalAmount, String status, String deliveryAddress, LocalDateTime createdAt, String driverName, String driverPhone, String driverVehicle, String estimatedDeliveryTime) {
+        this.id = id;
+        this.customerName = customerName;
+        this.items = items;
+        this.totalAmount = totalAmount;
+        this.status = status;
+        this.deliveryAddress = deliveryAddress;
+        this.createdAt = createdAt;
+        this.driverName = driverName;
+        this.driverPhone = driverPhone;
+        this.driverVehicle = driverVehicle;
+        this.estimatedDeliveryTime = estimatedDeliveryTime;
     }
 
     public OrderResponse(Long id, String customerName, String items, BigDecimal totalAmount, String status, String deliveryAddress, LocalDateTime createdAt) {
@@ -79,5 +97,37 @@ public class OrderResponse {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getDriverName() {
+        return driverName;
+    }
+
+    public void setDriverName(String driverName) {
+        this.driverName = driverName;
+    }
+
+    public String getDriverPhone() {
+        return driverPhone;
+    }
+
+    public void setDriverPhone(String driverPhone) {
+        this.driverPhone = driverPhone;
+    }
+
+    public String getDriverVehicle() {
+        return driverVehicle;
+    }
+
+    public void setDriverVehicle(String driverVehicle) {
+        this.driverVehicle = driverVehicle;
+    }
+
+    public String getEstimatedDeliveryTime() {
+        return estimatedDeliveryTime;
+    }
+
+    public void setEstimatedDeliveryTime(String estimatedDeliveryTime) {
+        this.estimatedDeliveryTime = estimatedDeliveryTime;
     }
 }

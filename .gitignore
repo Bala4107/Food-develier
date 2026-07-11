@@ -1,23 +1,44 @@
-# Target directories (compiled Java classes)
+# ============================================================
+# Java / Maven
+# ============================================================
 **/target/
 **/*.class
+**/*.jar
+!order-service/target/order-service-*.jar
 
-# Log files
+# ============================================================
+# Logs
+# ============================================================
 /logs/
 *.log
 **/*.log
 
-# Local Maven binaries
+# ============================================================
+# Maven wrapper
+# ============================================================
 .maven/
 
-# Dependency directories
+# ============================================================
+# Node / npm
+# ============================================================
 node_modules/
 react-frontend/node_modules/
 
-# Production builds (we will build this for GitHub Pages)
-react-frontend/dist/
+# React build output (committed for reference; excluded if using Vercel CI)
+# react-frontend/dist/
 
-# IDE and OS metadata
+# ============================================================
+# Environment & Secrets
+# ============================================================
+.env
+.env.local
+.env.production
+.env.*.local
+*.env
+
+# ============================================================
+# IDE / OS metadata
+# ============================================================
 .vscode/
 .idea/
 *.suo

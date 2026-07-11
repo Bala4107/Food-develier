@@ -47,6 +47,9 @@ public class KitchenController {
         // Exact logs required
         System.out.println("[KitchenService] Order #" + request.getOrderId() + " - FOOD READY");
 
+        // Update master order status to READY_FOR_DELIVERY
+        updateOrderStatus(request.getOrderId(), "READY_FOR_DELIVERY");
+
         KitchenResponse response = new KitchenResponse(
                 kitchenOrder.getId(),
                 request.getOrderId(),
