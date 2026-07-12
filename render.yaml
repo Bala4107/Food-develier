@@ -1,18 +1,12 @@
 services:
   - type: web
-    name: food-time-api
-    runtime: java
-    plan: free
-    # Build the order-service JAR
-    buildCommand: cd order-service && mvn clean package -DskipTests
-    # Run the JAR using the PORT env var Render injects automatically
-    startCommand: java -jar order-service/target/order-service-1.0.0-SNAPSHOT.jar
-    envVars:
-      - key: JAVA_VERSION
-        value: 21
-      - key: JWT_SECRET
-        generateValue: true
-      - key: CORS_ALLOWED_ORIGINS
-        value: "*"
-      - key: SERVER_PORT
-        value: "8081"
+      name: food-time-api
+          runtime: docker
+              plan: free
+                  envVars:
+                        - key: JWT_SECRET
+                                generateValue: true
+                                      - key: CORS_ALLOWED_ORIGINS
+                                              value: "*"
+                                                    - key: SERVER_PORT
+                                                            value: "8081"
