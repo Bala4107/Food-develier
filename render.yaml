@@ -10,3 +10,5 @@ services:
         value: "*"
       - key: PORT
         value: "8081"
+      - key: JAVA_VERSION
+        value: "21"
