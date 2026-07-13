@@ -61,7 +61,7 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/", "/health", "/error", "/api/auth/**").permitAll()
+                .requestMatchers("/", "/health", "/error", "/favicon.ico", "/images/**", "/assets/**", "/api/auth/**").permitAll()
                 // Permit all on orders so that microservices and existing tests can access them without tokens
                 .requestMatchers("/api/orders/**").permitAll()
                 .anyRequest().authenticated()
